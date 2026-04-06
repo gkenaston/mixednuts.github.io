@@ -1,107 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
-    <title>Welcome | Mixed Nuts</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 600px;
-            background: white;
-            padding: 60px 40px;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: #667eea;
-        }
-
-        p {
-            font-size: 1.1em;
-            margin-bottom: 30px;
-            color: #666;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 15px 40px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1em;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin-bottom: 40px;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
-        }
-
-        footer {
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px solid #eee;
-        }
-
-        .footer-link {
-            color: #667eea;
-            text-decoration: none;
-            font-size: 0.95em;
-            transition: color 0.3s ease;
-        }
-
-        .footer-link:hover {
-            color: #764ba2;
-            text-decoration: underline;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 40px 30px;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mixed Nuts - Organize Your Pickup Games</title>
+  <meta name="description" content="Mixed Nuts is a mobile app for organizing pickup sports games. Recurring schedules, smart rosters, reserve promotion, and group chat.">
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to Mixed Nuts</h1>
-        <p>We're building something amazing. Stay tuned for updates and exciting new features coming soon.</p>
-        
-        <!--<a href="#" class="cta-button">Get Started</a>-->
-        
-        <footer>
-            <a href="privacy.html" class="footer-link">Privacy Policy</a>
-        </footer>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo">Mixed Nuts</a>
+    <button class="nav-toggle" onclick="document.querySelector('.site-header nav').classList.toggle('open')" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/help/">Help</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="download">
+  <div class="container">
+    <h1>Organize Your Pickup Games</h1>
+    <p>Schedule recurring matches, manage rosters, promote reserves automatically, and keep your group connected with real-time chat and push notifications.</p>
+    <div class="hero-buttons">
+      <a href="#" class="btn btn-primary">App Store</a>
+      <a href="#" class="btn btn-outline">Google Play</a>
     </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Everything Your Group Needs</h2>
+    <p class="section-subtitle">From scheduling to roster management, Mixed Nuts handles the logistics so you can focus on playing.</p>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
+        </div>
+        <h3>Recurring Schedules</h3>
+        <p>Set up weekly, biweekly, or custom recurrence patterns. Matches are generated automatically so you never have to create them manually.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        </div>
+        <h3>Smart Rosters</h3>
+        <p>Players opt in or out of each match. Once the roster is full, additional players join an automatic reserve queue -- first come, first served.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"/></svg>
+        </div>
+        <h3>Reserve Promotion</h3>
+        <p>When a confirmed player drops out, the next reserve is automatically promoted and notified. No more scrambling to fill spots.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/></svg>
+        </div>
+        <h3>Group Chat + Push</h3>
+        <p>Real-time group chat keeps everyone coordinated. Push notifications alert players to roster changes, promotions, and new messages.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pricing" style="background: #fafafa;">
+  <div class="container">
+    <h2 class="section-title">Simple Pricing</h2>
+    <p class="section-subtitle">Get started for free. Upgrade when your league grows.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Free</h3>
+        <div class="pricing-price">$0</div>
+        <div class="pricing-annual">&nbsp;</div>
+        <ul class="pricing-features">
+          <li>1 group</li>
+          <li>Unlimited members</li>
+          <li>Recurring schedules + rosters</li>
+          <li>Push notifications</li>
+          <li>Group chat</li>
+          <li>Email notifications</li>
+          <li>Manual slot management</li>
+        </ul>
+        <a href="#" class="btn btn-primary" style="width:100%;">Get Started</a>
+      </div>
+      <div class="pricing-card featured">
+        <h3>Pro</h3>
+        <div class="pricing-price">$5 <span>/mo</span></div>
+        <div class="pricing-annual">or $50/year (save 17%)</div>
+        <ul class="pricing-features">
+          <li>Everything in Free</li>
+          <li>Up to 10 groups</li>
+          <li>Auto reserve promotion (AutoAssign)</li>
+          <li>Round robin leader rotation</li>
+        </ul>
+        <a href="#" class="btn btn-primary" style="width:100%;">Upgrade to Pro</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="download-section">
+  <div class="container">
+    <h2>Ready to Play?</h2>
+    <p>Download Mixed Nuts and get your group organized in minutes.</p>
+    <div class="hero-buttons">
+      <a href="#" class="btn btn-primary">App Store</a>
+      <a href="#" class="btn btn-outline">Google Play</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" style="margin-top:0;">
+  <div class="container">
+    <span>&copy; 2026 Mixed Nuts</span>
+    <div>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="mailto:mixednuts.app@gmail.com">Contact</a>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>

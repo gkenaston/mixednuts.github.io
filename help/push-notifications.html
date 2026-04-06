@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Push Notifications - Help - Mixed Nuts</title>
+  <meta name="description" content="Set up and troubleshoot push notifications in Mixed Nuts on Android and iOS.">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo">Mixed Nuts</a>
+    <button class="nav-toggle" onclick="document.querySelector('.site-header nav').classList.toggle('open')" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/help/">Help</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+    </nav>
+  </div>
+</header>
+
+<div class="article">
+  <div class="breadcrumb"><a href="/help/">Help</a> / Push Notifications</div>
+  <h1>Push Notifications</h1>
+  <p class="meta">Stay informed about roster changes, promotions, and chat messages.</p>
+
+  <h2>Android</h2>
+  <p>On Android, push notifications are enabled by default when you install Mixed Nuts. You can manage notification settings in your device's system settings under Apps > Mixed Nuts > Notifications.</p>
+
+  <h2>iOS</h2>
+  <p>On iOS, Mixed Nuts will ask for notification permission the first time you open the app. If you denied the prompt, you can enable notifications later by going to Settings > Notifications > Mixed Nuts and toggling "Allow Notifications" on.</p>
+
+  <h2>In-App Toggle</h2>
+  <p>Mixed Nuts includes an in-app push notification toggle under Profile > Push Notifications. This controls whether the app registers your device for push notifications. If disabled, you will not receive any push notifications from Mixed Nuts regardless of your system settings.</p>
+
+  <h2>What Triggers Notifications</h2>
+  <p>You will receive push notifications for:</p>
+  <ul>
+    <li><strong>Match reminders</strong> -- upcoming match notifications</li>
+    <li><strong>Roster changes</strong> -- when someone opts in or out of a match you are in</li>
+    <li><strong>Reserve promotion</strong> -- when you are promoted from reserve to confirmed</li>
+    <li><strong>Slot offers</strong> -- when you are offered a slot and need to confirm (AutoAssign/RoundRobin)</li>
+    <li><strong>Chat messages</strong> -- new messages in your group chats (unless muted)</li>
+    <li><strong>Match cancellations</strong> -- when a match you opted into is canceled</li>
+  </ul>
+
+  <h2>Troubleshooting</h2>
+  <p>If you are not receiving notifications:</p>
+  <ol>
+    <li><strong>Check system settings</strong> -- make sure notifications are enabled for Mixed Nuts in your device's notification settings.</li>
+    <li><strong>Check the in-app toggle</strong> -- go to Profile > Push Notifications and make sure it is enabled.</li>
+    <li><strong>Check your internet connection</strong> -- push notifications require an active internet connection to be delivered.</li>
+    <li><strong>Restart the app</strong> -- close and reopen Mixed Nuts to re-register your device token.</li>
+    <li><strong>Check Do Not Disturb</strong> -- make sure your device is not in Do Not Disturb or Focus mode.</li>
+  </ol>
+  <p>If notifications still are not working after trying these steps, contact us at <a href="mailto:mixednuts.app@gmail.com">mixednuts.app@gmail.com</a>.</p>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>&copy; 2026 Mixed Nuts</span>
+    <div>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="mailto:mixednuts.app@gmail.com">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

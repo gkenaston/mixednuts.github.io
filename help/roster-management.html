@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roster Management - Help - Mixed Nuts</title>
+  <meta name="description" content="Learn how roster management works in Mixed Nuts. Opt in, opt out, reserves, player statuses, and admin controls.">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo">Mixed Nuts</a>
+    <button class="nav-toggle" onclick="document.querySelector('.site-header nav').classList.toggle('open')" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/help/">Help</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+    </nav>
+  </div>
+</header>
+
+<div class="article">
+  <div class="breadcrumb"><a href="/help/">Help</a> / Roster Management</div>
+  <h1>Roster Management</h1>
+  <p class="meta">How players join matches, the reserve queue, and player statuses.</p>
+
+  <h2>Opting In and Out</h2>
+  <p>To join a match, open it and tap "Opt In." If there is room on the roster (fewer confirmed players than the max), you are immediately confirmed. If the roster is full, you are added to the reserve queue.</p>
+  <p>To leave a match, tap "Opt Out." Your spot is released. If you were confirmed and there are reserves waiting, the first reserve is promoted to fill your spot.</p>
+
+  <h2>Max Players</h2>
+  <p>Each match has a maximum player limit set by the group owner. Once the confirmed roster reaches this limit, all additional opt-ins are placed in the reserve queue. The group owner or admins can adjust the max players at any time.</p>
+
+  <h2>Reserve Queue</h2>
+  <p>The reserve queue is ordered first come, first served. When a confirmed player opts out or is removed, the reserve at the front of the queue is next in line for promotion. How promotion happens depends on the group's slot offer mode (see <a href="/help/slot-offers.html">Slot Offers</a>).</p>
+
+  <h2>Player Statuses</h2>
+  <ul>
+    <li><strong>Confirmed</strong> -- the player has a guaranteed spot in the match</li>
+    <li><strong>Reserve</strong> -- the player is in the queue waiting for a spot to open</li>
+    <li><strong>PendingConfirmation</strong> -- a reserve has been offered a spot and has a limited time to confirm (Pro groups with AutoAssign)</li>
+    <li><strong>OptedOut</strong> -- the player has declined to participate in this match</li>
+  </ul>
+
+  <h2>Owner and Admin Abilities</h2>
+  <p>Group owners and admins have additional roster controls:</p>
+  <ul>
+    <li>Remove a player from a match</li>
+    <li>Manage group members (promote to admin, remove from group)</li>
+    <li>Adjust max players for a match</li>
+  </ul>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>&copy; 2026 Mixed Nuts</span>
+    <div>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="mailto:mixednuts.app@gmail.com">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

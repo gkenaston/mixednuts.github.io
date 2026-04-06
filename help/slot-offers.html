@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slot Offers - Help - Mixed Nuts</title>
+  <meta name="description" content="How slot offers work in Mixed Nuts. Manual, AutoAssign, and RoundRobin modes for reserve promotion.">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo">Mixed Nuts</a>
+    <button class="nav-toggle" onclick="document.querySelector('.site-header nav').classList.toggle('open')" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/help/">Help</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+    </nav>
+  </div>
+</header>
+
+<div class="article">
+  <div class="breadcrumb"><a href="/help/">Help</a> / Slot Offers</div>
+  <h1>Slot Offers</h1>
+  <p class="meta">What happens when a confirmed player drops out and a reserve spot opens up.</p>
+
+  <h2>When a Confirmed Player Drops Out</h2>
+  <p>When a confirmed player opts out of a match that has reserves waiting, a spot opens up. How that spot is filled depends on the group's slot offer mode.</p>
+
+  <h2>Manual Mode (Free)</h2>
+  <p>In Manual mode, the group owner is responsible for managing reserves. When a spot opens, the owner can manually promote a reserve to fill it. This is the default mode for all groups on the Free plan.</p>
+
+  <h2>AutoAssign Mode (Pro)</h2>
+  <p>In AutoAssign mode, reserves are automatically promoted in FIFO (first in, first out) order. When a confirmed player drops out:</p>
+  <ol>
+    <li>The first reserve in the queue receives a push notification that they have been offered a slot.</li>
+    <li>The reserve has a configurable time window to confirm their attendance.</li>
+    <li>If they confirm, they become a confirmed player.</li>
+    <li>If they do not respond within the time window, the offer expires and the next reserve in the queue is offered the slot.</li>
+    <li>This process repeats until someone confirms or there are no more reserves.</li>
+  </ol>
+  <p>AutoAssign is available on the Pro plan.</p>
+
+  <h2>RoundRobin Mode (Pro)</h2>
+  <p>RoundRobin mode works similarly to AutoAssign for reserve promotion, but also adds leader rotation. See <a href="/help/round-robin.html">Round Robin</a> for details on the leader rotation feature.</p>
+  <p>RoundRobin is available on the Pro plan.</p>
+
+  <h2>Confirmation Timeouts</h2>
+  <p>When a reserve is offered a slot (in AutoAssign or RoundRobin mode), they have a limited time to confirm. If they do not respond within the timeout period, the system automatically moves to the next reserve. This ensures spots are filled promptly and no one is left waiting indefinitely.</p>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>&copy; 2026 Mixed Nuts</span>
+    <div>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="mailto:mixednuts.app@gmail.com">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

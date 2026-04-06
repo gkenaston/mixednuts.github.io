@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Match Scheduling - Help - Mixed Nuts</title>
+  <meta name="description" content="Learn how match scheduling works in Mixed Nuts. Recurring schedules, one-off matches, editing, and canceling.">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo">Mixed Nuts</a>
+    <button class="nav-toggle" onclick="document.querySelector('.site-header nav').classList.toggle('open')" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/help/">Help</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+    </nav>
+  </div>
+</header>
+
+<div class="article">
+  <div class="breadcrumb"><a href="/help/">Help</a> / Match Scheduling</div>
+  <h1>Match Scheduling</h1>
+  <p class="meta">How matches are created, edited, and canceled.</p>
+
+  <h2>Recurring Schedules</h2>
+  <p>When you create a group, you set a recurrence pattern -- for example, every Tuesday at 7:00 PM, or every other Saturday at 10:00 AM. Mixed Nuts uses this pattern to automatically generate matches for upcoming dates within a rolling window.</p>
+  <p>Supported recurrence types include:</p>
+  <ul>
+    <li>Weekly (e.g., every Monday)</li>
+    <li>Biweekly (e.g., every other Friday)</li>
+    <li>Custom patterns via recurrence rules (e.g., first and third Wednesday of each month)</li>
+  </ul>
+
+  <h2>One-Off Matches</h2>
+  <p>Group owners and admins can create additional matches outside the recurring schedule. This is useful for makeup games, tournaments, or special events. One-off matches appear alongside recurring ones on the group screen.</p>
+
+  <h2>Editing a Match</h2>
+  <p>Owners and admins can edit match details such as time, location, and max players. When editing a recurring match, you can choose to:</p>
+  <ul>
+    <li><strong>Edit this match only</strong> -- changes apply to just this occurrence</li>
+    <li><strong>Edit all future matches</strong> -- changes apply to this and all subsequent occurrences</li>
+  </ul>
+
+  <h2>Canceling a Match</h2>
+  <p>Owners and admins can cancel a match. When a match is canceled, all opted-in players receive a push notification and email alert informing them of the cancellation.</p>
+
+  <h2>Match Details</h2>
+  <p>Each match displays:</p>
+  <ul>
+    <li><strong>Scheduled time</strong> -- in the group's timezone</li>
+    <li><strong>Location</strong> -- where the match will be played</li>
+    <li><strong>Max players</strong> -- the cap on confirmed roster spots</li>
+    <li><strong>Current roster</strong> -- confirmed players and reserves</li>
+  </ul>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>&copy; 2026 Mixed Nuts</span>
+    <div>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="mailto:mixednuts.app@gmail.com">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
