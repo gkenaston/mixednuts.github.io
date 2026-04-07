@@ -170,6 +170,11 @@ h1, h2, h3, h4 { color: #212121; line-height: 1.3; }
   width: auto;
 }
 
+.store-badge-gp img {
+  height: 76px;
+  margin: -12px 0;
+}
+
 /* ========== Hero Animations ========== */
 
 .anim-fade-in {
