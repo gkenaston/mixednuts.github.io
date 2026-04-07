@@ -130,7 +130,7 @@ h1, h2, h3, h4 { color: #212121; line-height: 1.3; }
 .hero h1 {
   font-family: 'Raleway', sans-serif;
   color: rgba(255,255,255,0.5);
-  font-size: 1.15rem;
+  font-size: 1.3rem;
   font-weight: 500;
   letter-spacing: 4px;
   text-transform: uppercase;
@@ -587,7 +587,7 @@ h1, h2, h3, h4 { color: #212121; line-height: 1.3; }
 @media (max-width: 768px) {
   .hero { padding: 72px 0 60px; }
   .brand-name { font-size: 3.5rem; letter-spacing: 4px; }
-  .hero h1 { font-size: 1rem; letter-spacing: 2px; }
+  .hero h1 { font-size: 1.1rem; letter-spacing: 2px; }
   .hero p { font-size: 1rem; }
   .section { padding: 56px 0; }
   .section-title { font-size: 1.6rem; }
@@ -621,7 +621,7 @@ h1, h2, h3, h4 { color: #212121; line-height: 1.3; }
 
 @media (max-width: 480px) {
   .brand-name { font-size: 2.5rem; letter-spacing: 2px; }
-  .hero h1 { font-size: 0.85rem; letter-spacing: 2px; }
+  .hero h1 { font-size: 1rem; letter-spacing: 2px; }
   .hero-badges { flex-direction: column; align-items: center; }
   .store-badge img { height: 46px; }
   .cards-grid { grid-template-columns: 1fr; }
