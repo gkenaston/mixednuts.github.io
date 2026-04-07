@@ -7,8 +7,8 @@
   <meta name="description" content="Mixed Nuts is a mobile app for organizing pickup sports games. Recurring schedules, smart rosters, reserve promotion, and group chat.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Raleway:wght@400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css?v=2">
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css?v=3">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 </head>
 <body>
@@ -30,18 +30,19 @@
 </header>
 
 <section class="hero" id="download">
-  <div class="container">
-    <div class="brand-name">MIXED NUTS</div>
-    <h1>Organize Your Play</h1>
-    <p>Schedule recurring matches, manage rosters, promote reserves automatically, and keep your group connected with real-time chat and push notifications.</p>
-    <div class="hero-buttons">
-      <a href="#" class="btn btn-primary">App Store</a>
-      <a href="#" class="btn btn-outline">Google Play</a>
+  <div class="hero-bg"></div>
+  <div class="container hero-content">
+    <div class="brand-name anim-fade-in">MIXED NUTS</div>
+    <h1 class="anim-fade-in anim-d1">Organize Your Play</h1>
+    <p class="anim-fade-in anim-d2">Schedule recurring matches, manage rosters, promote reserves automatically, and keep your group connected with real-time chat and push notifications.</p>
+    <div class="hero-badges anim-fade-in anim-d3">
+      <a href="#" class="store-badge"><img src="/img/app-store-badge.svg" alt="Download on the App Store" height="52"></a>
+      <a href="#" class="store-badge"><img src="/img/google-play-badge.png" alt="Get it on Google Play" height="52"></a>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section section-features">
   <div class="container">
     <h2 class="section-title">Everything Your Group Needs</h2>
     <p class="section-subtitle">From scheduling to roster management, Mixed Nuts handles the logistics so you can focus on playing.</p>
@@ -78,7 +79,7 @@
   </div>
 </section>
 
-<section class="section" id="pricing" style="background: #FFFFFF;">
+<section class="section section-pricing" id="pricing">
   <div class="container">
     <h2 class="section-title">Simple Pricing</h2>
     <p class="section-subtitle">Get started for free. Upgrade when your league grows.</p>
@@ -96,7 +97,7 @@
           <li>Email notifications</li>
           <li>Manual slot management</li>
         </ul>
-        <a href="#download" class="btn btn-primary" style="width:100%;">Download Free</a>
+        <a href="#download" class="btn btn-dark">Download Free</a>
       </div>
       <div class="pricing-card featured">
         <h3>Pro</h3>
@@ -108,7 +109,7 @@
           <li>Auto reserve promotion (AutoAssign)</li>
           <li>Round robin leader rotation</li>
         </ul>
-        <a href="#download" class="btn btn-primary" style="width:100%;">Upgrade in App</a>
+        <a href="#download" class="btn btn-dark">Upgrade in App</a>
       </div>
     </div>
   </div>
@@ -118,23 +119,42 @@
   <div class="container">
     <h2>Ready to Play?</h2>
     <p>Download Mixed Nuts and get your group organized in minutes.</p>
-    <div class="hero-buttons">
-      <a href="#" class="btn btn-primary">App Store</a>
-      <a href="#" class="btn btn-outline">Google Play</a>
+    <div class="hero-badges">
+      <a href="#" class="store-badge"><img src="/img/app-store-badge.svg" alt="Download on the App Store" height="52"></a>
+      <a href="#" class="store-badge"><img src="/img/google-play-badge.png" alt="Get it on Google Play" height="52"></a>
     </div>
   </div>
 </section>
 
-<footer class="site-footer" style="margin-top:0;">
+<footer class="site-footer">
   <div class="container">
-    <span>&copy; 2026 Mixed Nuts</span>
+    <div class="footer-brand">
+      <svg width="24" height="24" viewBox="37.5 60 225 180" xmlns="http://www.w3.org/2000/svg"><path d="m52.5 75.003h45l52.5 52.5 52.5-52.5h45v149.99h-45l-45-45v45h-45v-63.747h45l45 45v-112.51l-52.5 52.5-52.5-52.5v131.24h-45z" fill="rgba(255,255,255,0.5)" stroke-width=".88582"/></svg>
+      <span>&copy; 2026 Mixed Nuts</span>
+    </div>
     <div>
       <a href="/privacy.html">Privacy</a>
       <a href="/terms.html">Terms</a>
-
     </div>
   </div>
 </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.card, .pricing-card, .section-title, .section-subtitle').forEach(el => {
+    el.classList.add('scroll-reveal');
+    observer.observe(el);
+  });
+});
+</script>
 
 </body>
 </html>
