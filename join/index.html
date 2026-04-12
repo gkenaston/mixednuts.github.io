@@ -145,7 +145,7 @@
 
       if (code) {
         codeEl.innerHTML = '<div class="invite-code">' + code.replace(/[<>&"]/g, '') + '</div>';
-        openEl.innerHTML = '<a href="mnuts://invite/' + encodeURIComponent(code) + '" class="open-btn">Open in App</a>';
+        openEl.innerHTML = '<a href="mixednuts://invite/' + encodeURIComponent(code) + '" class="open-btn">Open in App</a>';
       } else {
         codeEl.innerHTML = '<p class="no-code">No invite code found in the link.</p>';
       }
