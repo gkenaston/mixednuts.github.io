@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mixed Nuts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Raleway', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #1a1a1a;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { text-align: center; max-width: 420px; width: 100%; }
+    .logo { margin-bottom: 32px; }
+    .logo svg { display: inline-block; }
+    h1 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.5;
+      margin-bottom: 28px;
+    }
+    .invite-code {
+      font-family: 'Russo One', sans-serif;
+      font-size: 2.5rem;
+      letter-spacing: 4px;
+      color: #fff;
+      margin-bottom: 36px;
+    }
+    .open-btn {
+      display: inline-block;
+      padding: 14px 48px;
+      background: #fff;
+      color: #1a1a1a;
+      border-radius: 8px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .open-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(255,255,255,0.15);
+      text-decoration: none;
+    }
+    .store-section {
+      margin-top: 40px;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.9rem;
+    }
+    .store-section p { margin-bottom: 16px; }
+    .store-badges {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .store-badges a {
+      display: inline-block;
+      opacity: 0.9;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .store-badges a:hover { transform: translateY(-2px); opacity: 1; }
+    .store-badges img { height: 44px; width: auto; display: block; }
+    .home-link {
+      margin-top: 48px;
+      display: inline-block;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .home-link:hover { color: #fff; }
+    .error-code {
+      font-family: 'Russo One', sans-serif;
+      font-size: 5rem;
+      letter-spacing: 4px;
+      color: rgba(255,255,255,0.15);
+      margin-bottom: 16px;
+    }
+    .no-code {
+      color: rgba(255,255,255,0.45);
+      font-size: 0.95rem;
+      margin-bottom: 28px;
+    }
+    @media (max-width: 480px) {
+      .error-code { font-size: 3.5rem; }
+      .invite-code { font-size: 2rem; letter-spacing: 2px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page" id="content">
+    <!-- Filled by JS: either join page or 404 -->
+  </div>
+  <script>
+    (function() {
+      var path = window.location.pathname.replace(/\/$/, '');
+      var parts = path.split('/');
+      var el = document.getElementById('content');
+
+      // Check if this is a /join/ deep link
+      if (parts.length >= 3 && parts[1] === 'join' && parts[2]) {
+        var code = decodeURIComponent(parts[2]).replace(/[<>&"]/g, '');
+        document.title = 'Join a Group - Mixed Nuts';
+        el.innerHTML =
+          '<div class="logo"><svg width="48" height="48" viewBox="52.5 75 195 150" xmlns="http://www.w3.org/2000/svg"><path d="m52.5 75.003h45l52.5 52.5 52.5-52.5h45v149.99h-45l-45-45v45h-45v-63.747h45l45 45v-112.51l-52.5 52.5-52.5-52.5v131.24h-45z" fill="#FFFFFF" stroke-width=".88582"/></svg></div>' +
+          '<h1>You\'ve been invited to join a group on Mixed Nuts!</h1>' +
+          '<div class="invite-code">' + code + '</div>' +
+          '<a href="mnuts://invite/' + encodeURIComponent(code) + '" class="open-btn">Open in App</a>' +
+          '<div class="store-section">' +
+            '<p>Don\'t have the app?</p>' +
+            '<div class="store-badges">' +
+              '<a href="#"><img src="/img/app-store-badge.svg" alt="Download on the App Store"></a>' +
+              '<a href="#"><img src="/img/google-play-badge.png" alt="Get it on Google Play"></a>' +
+            '</div>' +
+          '</div>' +
+          '<a href="/" class="home-link">mixednuts.app</a>';
+      } else {
+        // Regular 404
+        document.title = 'Page Not Found - Mixed Nuts';
+        el.innerHTML =
+          '<div class="logo"><svg width="48" height="48" viewBox="52.5 75 195 150" xmlns="http://www.w3.org/2000/svg"><path d="m52.5 75.003h45l52.5 52.5 52.5-52.5h45v149.99h-45l-45-45v45h-45v-63.747h45l45 45v-112.51l-52.5 52.5-52.5-52.5v131.24h-45z" fill="#FFFFFF" stroke-width=".88582"/></svg></div>' +
+          '<div class="error-code">404</div>' +
+          '<h1>Page not found</h1>' +
+          '<a href="/" class="home-link">Back to mixednuts.app</a>';
+      }
+    })();
+  </script>
+</body>
+</html>

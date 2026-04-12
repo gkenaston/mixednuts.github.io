@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "mixednuts.maui.app",
+    "sha256_cert_fingerprints": ["51:E6:36:B6:A3:2C:9A:E4:10:1D:C0:0F:9D:8A:72:EB:27:C1:42:28:5D:10:03:FE:F6:D5:D0:25:E3:F1:31:04"]
+  }
+}]

@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "64R9ZJQF7N.mixednuts.maui.app",
+        "paths": ["/join/*"]
+      }
+    ]
+  }
+}
