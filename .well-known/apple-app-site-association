@@ -4,7 +4,7 @@
     "details": [
       {
         "appID": "64R9ZJQF7N.mixednuts.maui.app",
-        "paths": ["/join/*"]
+        "paths": ["/join/*", "/match/*", "/chat/*"]
       }
     ]
   }

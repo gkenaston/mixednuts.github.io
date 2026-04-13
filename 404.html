@@ -108,7 +108,7 @@
 </head>
 <body>
   <div class="page" id="content">
-    <!-- Filled by JS: either join page or 404 -->
+    <!-- Filled by JS: join page, match/chat fallback, or 404 -->
   </div>
   <script>
     (function() {
@@ -116,43 +116,63 @@
       var parts = path.split('/');
       var el = document.getElementById('content');
 
-      // Check if this is a /join/ deep link
-      var isJoin = parts.length >= 2 && parts[1] === 'join';
-      var code = null;
-      if (parts.length >= 3 && parts[1] === 'join' && parts[2]) {
-        code = decodeURIComponent(parts[2]);
-      }
-      if (!code && isJoin) {
-        var params = new URLSearchParams(window.location.search);
-        code = params.get('code');
-      }
-      if (code) {
-        code = code.replace(/[<>&"]/g, '');
-      }
+      var logo = '<div class="logo"><svg width="100" height="100" viewBox="52.5 75 195 150" xmlns="http://www.w3.org/2000/svg"><path d="m52.5 75.003h45l52.5 52.5 52.5-52.5h45v149.99h-45l-45-45v45h-45v-63.747h45l45 45v-112.51l-52.5 52.5-52.5-52.5v131.24h-45z" fill="#FFFFFF" stroke-width=".88582"/></svg></div>';
+      var storeBadges =
+        '<div class="store-section">' +
+          '<p>Don\'t have the app?</p>' +
+          '<div class="store-badges">' +
+            '<a href="#"><img src="/img/app-store-badge.svg" alt="Download on the App Store"></a>' +
+            '<a href="#"><img src="/img/google-play-badge.png" alt="Get it on Google Play"></a>' +
+          '</div>' +
+        '</div>' +
+        '<a href="/" class="home-link">mixednuts.app</a>';
 
+      // /join/{code} or /join/?code=...
+      var isJoin = parts.length >= 2 && parts[1] === 'join';
       if (isJoin) {
+        var code = null;
+        if (parts.length >= 3 && parts[2]) {
+          code = decodeURIComponent(parts[2]);
+        }
+        if (!code) {
+          var params = new URLSearchParams(window.location.search);
+          code = params.get('code');
+        }
+        if (code) {
+          code = code.replace(/[<>&"]/g, '');
+        }
+
         document.title = 'Join a Group - Mixed Nuts';
-        var logo = '<div class="logo"><svg width="100" height="100" viewBox="52.5 75 195 150" xmlns="http://www.w3.org/2000/svg"><path d="m52.5 75.003h45l52.5 52.5 52.5-52.5h45v149.99h-45l-45-45v45h-45v-63.747h45l45 45v-112.51l-52.5 52.5-52.5-52.5v131.24h-45z" fill="#FFFFFF" stroke-width=".88582"/></svg></div>';
-        var store = '<div class="store-section"><p>Don\'t have the app?</p><div class="store-badges"><a href="#"><img src="/img/app-store-badge.svg" alt="Download on the App Store"></a><a href="#"><img src="/img/google-play-badge.png" alt="Get it on Google Play"></a></div></div>';
         if (code) {
           el.innerHTML = logo +
             '<h1>You\'ve been invited to join a group on Mixed Nuts!</h1>' +
             '<div class="invite-code">' + code + '</div>' +
-            '<a href="mixednuts://invite/' + encodeURIComponent(code) + '" class="open-btn">Open in App</a>' +
-            store +
-            '<a href="/" class="home-link">mixednuts.app</a>';
+            '<a href="https://www.mixednuts.app/join/' + encodeURIComponent(code) + '" class="open-btn">Open in App</a>' +
+            storeBadges;
         } else {
           el.innerHTML = logo +
             '<h1>You\'ve been invited to join a group on Mixed Nuts!</h1>' +
             '<p class="no-code">No invite code found in the link.</p>' +
-            store +
-            '<a href="/" class="home-link">mixednuts.app</a>';
+            storeBadges;
         }
+      } else if (parts.length >= 4 && parts[1] === 'match') {
+        // /match/{groupId}/{matchId}?at=...
+        document.title = 'View Match - Mixed Nuts';
+        el.innerHTML = logo +
+          '<h1>You have a match on Mixed Nuts</h1>' +
+          '<a href="' + window.location.href + '" class="open-btn">Open in App</a>' +
+          storeBadges;
+      } else if (parts.length >= 3 && parts[1] === 'chat') {
+        // /chat/{groupId}
+        document.title = 'Group Chat - Mixed Nuts';
+        el.innerHTML = logo +
+          '<h1>Open your group chat on Mixed Nuts</h1>' +
+          '<a href="' + window.location.href + '" class="open-btn">Open in App</a>' +
+          storeBadges;
       } else {
         // Regular 404
         document.title = 'Page Not Found - Mixed Nuts';
-        el.innerHTML =
-          '<div class="logo"><svg width="100" height="100" viewBox="52.5 75 195 150" xmlns="http://www.w3.org/2000/svg"><path d="m52.5 75.003h45l52.5 52.5 52.5-52.5h45v149.99h-45l-45-45v45h-45v-63.747h45l45 45v-112.51l-52.5 52.5-52.5-52.5v131.24h-45z" fill="#FFFFFF" stroke-width=".88582"/></svg></div>' +
+        el.innerHTML = logo +
           '<div class="error-code">404</div>' +
           '<h1>Page not found</h1>' +
           '<a href="/" class="home-link">Back to mixednuts.app</a>';
