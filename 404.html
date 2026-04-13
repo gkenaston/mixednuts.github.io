@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mixed Nuts</title>
+  <meta name="description" content="You've been invited to join a group on Mixed Nuts.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -77,7 +78,7 @@
       transition: transform 0.2s, opacity 0.2s;
     }
     .store-badges a:hover { transform: translateY(-2px); opacity: 1; }
-    .store-badges img { height: 44px; width: auto; display: block; }
+    .store-badges img { height: 44px; width: 148px; object-fit: contain; display: block; }
     .home-link {
       margin-top: 48px;
       display: inline-block;
@@ -116,22 +117,37 @@
       var el = document.getElementById('content');
 
       // Check if this is a /join/ deep link
+      var isJoin = parts.length >= 2 && parts[1] === 'join';
+      var code = null;
       if (parts.length >= 3 && parts[1] === 'join' && parts[2]) {
-        var code = decodeURIComponent(parts[2]).replace(/[<>&"]/g, '');
+        code = decodeURIComponent(parts[2]);
+      }
+      if (!code && isJoin) {
+        var params = new URLSearchParams(window.location.search);
+        code = params.get('code');
+      }
+      if (code) {
+        code = code.replace(/[<>&"]/g, '');
+      }
+
+      if (isJoin) {
         document.title = 'Join a Group - Mixed Nuts';
-        el.innerHTML =
-          '<div class="logo"><svg width="100" height="100" viewBox="52.5 75 195 150" xmlns="http://www.w3.org/2000/svg"><path d="m52.5 75.003h45l52.5 52.5 52.5-52.5h45v149.99h-45l-45-45v45h-45v-63.747h45l45 45v-112.51l-52.5 52.5-52.5-52.5v131.24h-45z" fill="#FFFFFF" stroke-width=".88582"/></svg></div>' +
-          '<h1>You\'ve been invited to join a group on Mixed Nuts!</h1>' +
-          '<div class="invite-code">' + code + '</div>' +
-          '<a href="mixednuts://invite/' + encodeURIComponent(code) + '" class="open-btn">Open in App</a>' +
-          '<div class="store-section">' +
-            '<p>Don\'t have the app?</p>' +
-            '<div class="store-badges">' +
-              '<a href="#"><img src="/img/app-store-badge.svg" alt="Download on the App Store"></a>' +
-              '<a href="#"><img src="/img/google-play-badge.png" alt="Get it on Google Play"></a>' +
-            '</div>' +
-          '</div>' +
-          '<a href="/" class="home-link">mixednuts.app</a>';
+        var logo = '<div class="logo"><svg width="100" height="100" viewBox="52.5 75 195 150" xmlns="http://www.w3.org/2000/svg"><path d="m52.5 75.003h45l52.5 52.5 52.5-52.5h45v149.99h-45l-45-45v45h-45v-63.747h45l45 45v-112.51l-52.5 52.5-52.5-52.5v131.24h-45z" fill="#FFFFFF" stroke-width=".88582"/></svg></div>';
+        var store = '<div class="store-section"><p>Don\'t have the app?</p><div class="store-badges"><a href="#"><img src="/img/app-store-badge.svg" alt="Download on the App Store"></a><a href="#"><img src="/img/google-play-badge.png" alt="Get it on Google Play"></a></div></div>';
+        if (code) {
+          el.innerHTML = logo +
+            '<h1>You\'ve been invited to join a group on Mixed Nuts!</h1>' +
+            '<div class="invite-code">' + code + '</div>' +
+            '<a href="mixednuts://invite/' + encodeURIComponent(code) + '" class="open-btn">Open in App</a>' +
+            store +
+            '<a href="/" class="home-link">mixednuts.app</a>';
+        } else {
+          el.innerHTML = logo +
+            '<h1>You\'ve been invited to join a group on Mixed Nuts!</h1>' +
+            '<p class="no-code">No invite code found in the link.</p>' +
+            store +
+            '<a href="/" class="home-link">mixednuts.app</a>';
+        }
       } else {
         // Regular 404
         document.title = 'Page Not Found - Mixed Nuts';
