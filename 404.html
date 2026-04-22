@@ -121,8 +121,8 @@
         '<div class="store-section">' +
           '<p>Don\'t have the app?</p>' +
           '<div class="store-badges">' +
-            '<a href="#"><img src="/img/app-store-badge.svg" alt="Download on the App Store"></a>' +
-            '<a href="#"><img src="/img/google-play-badge.png" alt="Get it on Google Play"></a>' +
+            '<a href="https://apps.apple.com/app/mixed-nuts-organize-your-play/id6761734740"><img src="/img/app-store-badge.svg" alt="Download on the App Store"></a>' +
+            '<a href="https://play.google.com/store/apps/details?id=mixednuts.maui.app"><img src="/img/google-play-badge.png" alt="Get it on Google Play"></a>' +
           '</div>' +
         '</div>' +
         '<a href="/" class="home-link">mixednuts.app</a>';
@@ -147,7 +147,7 @@
           el.innerHTML = logo +
             '<h1>You\'ve been invited to join a group on Mixed Nuts!</h1>' +
             '<div class="invite-code">' + code + '</div>' +
-            '<a href="https://www.mixednuts.app/join/' + encodeURIComponent(code) + '" class="open-btn">Open in App</a>' +
+            '<a href="mixednuts://invite/' + encodeURIComponent(code) + '" class="open-btn">Open in App</a>' +
             storeBadges;
         } else {
           el.innerHTML = logo +
@@ -157,17 +157,22 @@
         }
       } else if (parts.length >= 4 && parts[1] === 'match') {
         // /match/{groupId}/{matchId}?at=...
+        var groupId = encodeURIComponent(parts[2]);
+        var matchId = encodeURIComponent(parts[3]);
+        var at = new URLSearchParams(window.location.search).get('at') || '';
+        var matchScheme = 'mixednuts://match/' + groupId + '/' + matchId + '/' + encodeURIComponent(at);
         document.title = 'View Match - Mixed Nuts';
         el.innerHTML = logo +
           '<h1>You have a match on Mixed Nuts</h1>' +
-          '<a href="' + window.location.href + '" class="open-btn">Open in App</a>' +
+          '<a href="' + matchScheme + '" class="open-btn">Open in App</a>' +
           storeBadges;
       } else if (parts.length >= 3 && parts[1] === 'chat') {
         // /chat/{groupId}
+        var chatScheme = 'mixednuts://chat/' + encodeURIComponent(parts[2]);
         document.title = 'Group Chat - Mixed Nuts';
         el.innerHTML = logo +
           '<h1>Open your group chat on Mixed Nuts</h1>' +
-          '<a href="' + window.location.href + '" class="open-btn">Open in App</a>' +
+          '<a href="' + chatScheme + '" class="open-btn">Open in App</a>' +
           storeBadges;
       } else {
         // Regular 404
