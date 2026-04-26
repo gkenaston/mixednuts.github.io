@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Round Robin - Help - Mixed Nuts</title>
-  <meta name="description" content="How round robin leader rotation works in Mixed Nuts. Fair task distribution across matches.">
+  <meta name="description" content="How Round Robin slot offers work in Mixed Nuts. Open slots are offered to reserves one at a time, in order, with active claim or decline.">
   <link rel="stylesheet" href="/style.css">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 </head>
@@ -29,20 +29,32 @@
 <div class="article">
   <div class="breadcrumb"><a href="/help/">Help</a> / Round Robin</div>
   <h1>Round Robin</h1>
-  <p class="meta">Rotating leader designation so responsibilities are shared fairly.</p>
+  <p class="meta">Open slots are offered to reserves one at a time, in order, until someone claims.</p>
 
   <h2>What Is Round Robin?</h2>
-  <p>Round Robin is a feature that rotates a "leader" designation across matches. The leader is typically the person responsible for coordinating the game -- bringing equipment, opening the venue, collecting fees, or whatever your group needs. By rotating automatically, no single person gets stuck with the responsibility every time.</p>
+  <p>Round Robin is one of the slot offer modes available on the Pro plan. When a confirmed player drops out of a match that has reserves waiting, Round Robin offers the open spot to the next reserve in line and waits for them to actively claim or decline. If they decline (or run out of time), the offer rolls to the next reserve. This continues until someone claims the spot or there are no more reserves.</p>
+  <p>It's a good fit for groups where reserves want a real choice -- they can pass on a match they can't make and the system keeps moving rather than auto-confirming them.</p>
 
   <h2>How to Enable It</h2>
   <p>Group owners can enable Round Robin in the group settings by selecting "RoundRobin" as the slot offer mode. This feature is available on the Pro plan.</p>
 
-  <h2>How the Rotation Works</h2>
-  <p>The system cycles through active group members in a consistent order. For each match, the next person in the rotation is designated as the leader. If that person is not opted into a particular match, the rotation skips them and moves to the next person who is opted in.</p>
-  <p>The rotation is persistent -- it remembers where it left off between matches, so the order stays fair over time.</p>
+  <h2>How an Offer Works</h2>
+  <ol>
+    <li>A confirmed player opts out (or is removed) and a slot opens up.</li>
+    <li>The reserve at the front of the queue (first opted in, first offered) receives a push notification and email -- "A slot just opened up!"</li>
+    <li>That reserve has a configurable time window to <strong>claim</strong> or <strong>decline</strong> the slot. The default is set per group.</li>
+    <li>If they claim, they become a confirmed player.</li>
+    <li>If they decline, or if the timer runs out without a response, the offer automatically moves to the next reserve in line.</li>
+    <li>Reserves who declined a particular match are skipped on subsequent offers for that same match.</li>
+  </ol>
 
-  <h2>Leader on Match Detail</h2>
-  <p>The designated leader is displayed prominently on the match detail screen so all group members know who is responsible for that match. The leader also receives a push notification when they are assigned.</p>
+  <h2>Round Robin vs AutoAssign</h2>
+  <p>Both modes promote reserves in the order they joined the queue, but they behave differently:</p>
+  <ul>
+    <li><strong>AutoAssign</strong> -- the next reserve is moved into the slot directly. If your group requires confirmation, they have a window to confirm; otherwise they are confirmed immediately.</li>
+    <li><strong>Round Robin</strong> -- the next reserve gets an explicit offer they must actively claim. Declining moves the offer along; it does not remove them from the queue for future matches.</li>
+  </ul>
+  <p>See <a href="/help/slot-offers.html">Slot Offers</a> for an overview of all modes.</p>
 </div>
 
 <footer class="site-footer">

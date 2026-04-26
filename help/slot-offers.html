@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Slot Offers - Help - Mixed Nuts</title>
-  <meta name="description" content="How slot offers work in Mixed Nuts. Manual, AutoAssign, and RoundRobin modes for reserve promotion.">
+  <meta name="description" content="How slot offers work in Mixed Nuts. Manual, AutoAssign, RoundRobin, and Auction modes for reserve promotion.">
   <link rel="stylesheet" href="/style.css">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 </head>
@@ -49,11 +49,16 @@
   <p>AutoAssign is available on the Pro plan.</p>
 
   <h2>RoundRobin Mode (Pro)</h2>
-  <p>RoundRobin mode works similarly to AutoAssign for reserve promotion, but also adds leader rotation. See <a href="/help/round-robin.html">Round Robin</a> for details on the leader rotation feature.</p>
+  <p>RoundRobin offers the open slot to the next reserve in line and waits for them to actively claim or decline. If they decline (or do not respond before the timer expires), the offer rolls to the next reserve. The previous reserve stays in the queue for future matches -- declining one offer does not remove them from future ones.</p>
+  <p>This mode is a good fit when reserves want an explicit say in whether they take the spot. See <a href="/help/round-robin.html">Round Robin</a> for the full walkthrough.</p>
   <p>RoundRobin is available on the Pro plan.</p>
 
+  <h2>Auction Mode (Pro)</h2>
+  <p>Auction mode broadcasts the open slot to <strong>all</strong> reserves at once. The first reserve to claim wins the spot. This is the fastest mode -- great when matches start soon and you want anyone available to grab the slot.</p>
+  <p>Auction is available on the Pro plan.</p>
+
   <h2>Confirmation Timeouts</h2>
-  <p>When a reserve is offered a slot (in AutoAssign or RoundRobin mode), they have a limited time to confirm. If they do not respond within the timeout period, the system automatically moves to the next reserve. This ensures spots are filled promptly and no one is left waiting indefinitely.</p>
+  <p>In AutoAssign and RoundRobin, the offered reserve has a limited time to act. If the timer expires the system automatically moves on to the next reserve. The exact window is configured per group. This keeps spots filling promptly and prevents any single reserve from stalling the queue.</p>
 </div>
 
 <footer class="site-footer">
