@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notification Inbox - Help - Mixed Nuts</title>
+  <meta name="description" content="The notification inbox in Mixed Nuts shows every alert you have received, even ones you dismissed. Catch up on roster changes, court formations, replies, and reactions in one place.">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo"><svg width="32" height="32" viewBox="52.5 75 195 150" xmlns="http://www.w3.org/2000/svg"><path d="m52.5 75.003h45l52.5 52.5 52.5-52.5h45v149.99h-45l-45-45v45h-45v-63.747h45l45 45v-112.51l-52.5 52.5-52.5-52.5v131.24h-45z" fill="#FFFFFF" stroke-width=".88582"/></svg></a>
+    <button class="nav-toggle" onclick="document.querySelector('.site-header nav').classList.toggle('open')" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/help/">Help</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+    </nav>
+  </div>
+</header>
+
+<div class="article">
+  <div class="breadcrumb"><a href="/help/">Help</a> / Notification Inbox</div>
+  <h1>Notification Inbox</h1>
+  <p class="meta">Every alert in one place &mdash; even the ones you dismissed.</p>
+
+  <h2>What Is the Inbox</h2>
+  <p>The notification inbox is a server-backed log of the alerts Mixed Nuts has sent you. Push notifications are easy to dismiss by accident; the inbox is your safety net. Tap the bell icon on the Home tab to open it. A dot on the bell means you have unread notifications.</p>
+
+  <h2>What Appears in the Inbox</h2>
+  <p>The inbox includes alerts that are not browseable elsewhere:</p>
+  <ul>
+    <li><strong>Court formed</strong> -- a match has reached its minimum and is going ahead</li>
+    <li><strong>Slot filled</strong> -- you were promoted from reserve to confirmed</li>
+    <li><strong>Court dissolved</strong> -- a previously formed match dropped below the minimum</li>
+    <li><strong>Match canceled</strong> -- a match you opted into has been canceled</li>
+    <li><strong>Match edited</strong> -- a match you opted into has been rescheduled or otherwise changed</li>
+    <li><strong>Thread reply</strong> -- someone replied to a message thread you started</li>
+    <li><strong>Reaction</strong> -- someone reacted to one of your messages</li>
+    <li><strong>Removed from group</strong> -- an admin removed you from a group</li>
+    <li><strong>Removed from match</strong> -- an admin removed you from a match roster</li>
+    <li><strong>Invite accepted</strong> -- a new member joined a group you own or admin</li>
+  </ul>
+
+  <h2>What Does Not Appear</h2>
+  <p>Two categories are intentionally left out:</p>
+  <ul>
+    <li><strong>Group chat messages</strong> -- the chat tab is already a complete history. Adding chat to the inbox would just double-count unread messages.</li>
+    <li><strong>Match reminders</strong> -- the match itself is on your schedule. Open the schedule to see what is coming up.</li>
+  </ul>
+
+  <h2>Marking Notifications Read</h2>
+  <p>Tap any notification row to open the related match, thread, chat, or group. The row is marked read automatically and the dot on the bell goes away once nothing is unread. To mark everything read at once, use the <strong>Mark all read</strong> action in the inbox toolbar.</p>
+
+  <h2>Push Notifications vs the Inbox</h2>
+  <p>Push notifications and the inbox are independent. A notification is delivered as a push (if you have push enabled) <em>and</em> persisted to the inbox. If you turn push off, you still get the inbox. If you have push on but dismiss the alert, the inbox row is still there.</p>
+  <p>See the <a href="/help/push-notifications.html">push notifications</a> help page for managing system-level notification settings.</p>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>&copy; 2026 Mixed Nuts</span>
+    <div>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
